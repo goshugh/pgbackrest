@@ -56,5 +56,8 @@ pgbackrest --stanza=demo --log-level-console=info --type=diff backup
 30 06  *   *   1-6   pgbackrest --type=diff --stanza=demo backup
 
 9. recovery
+--full
 pgbackrest --stanza=demo restore
 
+--test2 database
+pgbackrest --stanza=demo --delta --db-include=test2 --type=immediate --target-action=promote restore
