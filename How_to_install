@@ -39,5 +39,12 @@ pgbackrest --stanza=demo --log-level-console=info check
 info: check command end: completed successfully
 
 
-7. full backup
+7. backup
+--full
 pgbackrest --stanza=demo --log-level-console=info backup
+
+--incr(default)
+pgbackrest --stanza=demo --log-level-console=info --type=incr backup 
+
+--diff
+pgbackrest --stanza=demo --log-level-console=info --type=diff backup 
