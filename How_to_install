@@ -12,3 +12,7 @@ chown postgres:postgers /etc/pgbackrest
 
 2. cp 
 cp pgbackrest.conf /etc/pgbackrest/
+
+3. vi postgresql.conf
+-- How to fix this bug : 'cluster do not match version' error
+data_directory=/var/lib/pgsql/data
