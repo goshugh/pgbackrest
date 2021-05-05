@@ -1,0 +1,14 @@
+cd src
+./configure
+./make
+
+
+1. mkdir 
+mkdir /var/log/pgbackrest
+chown postgres:postgres /var/logpgbackrest
+mkdir /etc/pgbackrest
+chown postgres:postgers /etc/pgbackrest
+
+
+2. cp 
+cp pgbackrest.conf /etc/pgbackrest/
