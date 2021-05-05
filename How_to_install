@@ -1,6 +1,9 @@
+
+0. compile
 cd src
 ./configure
 ./make
+cp pgbackrest /usr/bin
 
 
 1. mkdir 
@@ -23,3 +26,18 @@ archive_mode = o
 data_directory=/var/lib/pgsql/data
 
 4. postgreSQL restart
+
+
+5. create repository
+pgbackrest --stanza=demo --log-level-console=info stanza-create
+
+stanza-create command end: completed successfully
+
+6. pgbackrest check
+pgbackrest --stanza=demo --log-level-console=info check
+
+info: check command end: completed successfully
+
+
+7. full backup
+pgbackrest --stanza=demo --log-level-console=info backup
