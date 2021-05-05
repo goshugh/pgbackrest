@@ -48,3 +48,10 @@ pgbackrest --stanza=demo --log-level-console=info --type=incr backup
 
 --diff
 pgbackrest --stanza=demo --log-level-console=info --type=diff backup 
+
+
+8. schedule backup
+#m h   dom mon dow   command
+30 06  *   *   0     pgbackrest --type=full --stanza=demo backup
+30 06  *   *   1-6   pgbackrest --type=diff --stanza=demo backup
+
