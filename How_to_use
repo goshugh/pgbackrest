@@ -1,8 +1,11 @@
 
 0. compile
+
+yum install gcc make postgresql-devel openssl-devel libxml2-devel libyaml-devel bzip2-devel
+
 cd src
 ./configure
-./make
+make
 cp pgbackrest /usr/bin
 
 
