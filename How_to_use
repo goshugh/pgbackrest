@@ -10,20 +10,24 @@ cp pgbackrest /usr/bin
 
 
 1. mkdir 
+su - root
 mkdir /var/log/pgbackrest
-chown postgres:postgres /var/logpgbackrest
+chown postgres:postgres /var/log/pgbackrest
 mkdir /etc/pgbackrest
-chown postgres:postgers /etc/pgbackrest
+chown postgres:postgres /etc/pgbackrest
 
 
 2. cp 
-cp pgbackrest.conf /etc/pgbackrest/
+su - postgres
+--cp pgbackrest.conf /etc/pgbackrest/
+touch /etc/pgbackrest/pgbackrest.conf
+chmod 640 /etc/pgbackrest/pgbackrest.conf
 
 3. vi postgresql.conf
 
 -- archive 
 archive_command = 'pgbackrest --stanza=demo archive-push %p'
-archive_mode = o
+archive_mode = on
 
 -- How to fix this bug : 'cluster do not match version' error
 data_directory=/var/lib/pgsql/data
